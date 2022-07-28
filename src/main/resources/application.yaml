@@ -1,0 +1,12 @@
+sql-config:
+  user: ${POSTGRES_USER:admin}
+  password: ${POSTGRES_PASSWORD:admin}
+  host: ${POSTGRES_HOST:localhost}
+  port: ${POSTGRES_PORT:5432}
+  db-name: ${POSTGRES_DB_NAME:postgres}
+  url: jdbc:postgresql://${sql-config.host}:${sql-config.port}/${sql-config.db-name}
+spring:
+  datasource:
+    url: ${sql-config.url}
+    username: ${sql-config.user}
+    password: ${sql-config.password}
